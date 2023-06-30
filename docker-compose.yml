@@ -1,0 +1,20 @@
+version: '3'
+services:
+  TicTacToeServer:
+    image: grishnn/tictactoeserver:latest
+    ports:
+      - 9001:9001
+    networks:
+      - mynetwork
+    container_name: tictactoeserver
+    hostname: TicTacToeServer
+  TicTacToeComputer:
+    image: grishnn/tictactoecomputer:latest
+    ports:
+      - 9002:9002
+    networks:
+      - mynetwork
+    container_name: tictactoecomputer
+    hostname: TicTacToeComputer
+networks:
+  mynetwork:
